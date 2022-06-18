@@ -1,7 +1,14 @@
 import React from "react";
-import { Navbar, Container, Nav, Form, FormControl } from "react-bootstrap";
+
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const activeStyle = {
+    fontWeight: "bold",
+    color: "red",
+  };
+
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -14,18 +21,14 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/products">Product</Nav.Link>
-              <Nav.Link href="/productDetails">Product Details</Nav.Link>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/products" activeStyle={activeStyle}>
+                Products
+              </NavLink>
+              <NavLink to="/productDetails" activeStyle={activeStyle}>
+                Product Details
+              </NavLink>
             </Nav>
-            <Form>
-              <FormControl
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-            </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>
