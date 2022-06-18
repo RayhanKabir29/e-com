@@ -1,0 +1,23 @@
+.form-container {
+    width: 570px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+   margin-top: 30px;
+    flex-direction: column;
+}
+.submit-btn{
+    margin-top: 12px;
+    border: none;
+    background: #D7DD1D;
+    color: #fff;
+    padding: 12px 45px;
+    border-radius: 22px;
+    
+}
+@media screen and (max-width: 360px) {
+    .form-container {
+        width: 100%;
+        
+    }
+  }

@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Cart from "./components/Cart/Cart";
+
 import Header from "./components/Header/Header";
 import Login from "./components/Login/Login";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
@@ -20,9 +20,7 @@ function App() {
         <Route path="/product/:ProductId">
           <ProductDetails />
         </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
+
         <Route path="/register">
           <Register />
         </Route>

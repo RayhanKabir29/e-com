@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Alert, Container } from "react-bootstrap";
-import Home from "../Home";
 import Products from "../Products/Products";
+import "./Login.css";
 
 const Login = () => {
   const [emailLog, setEmailLog] = useState("");
@@ -28,35 +28,37 @@ const Login = () => {
       <Container>
         {home ? (
           <form onSubmit={handleLogin}>
-            <h3>LogIn</h3>
-            <div className="form-group">
-              <label>Email</label>
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Enter email"
-                onChange={(e) => setEmailLog(e.target.value)}
-              />
-            </div>
+            <div className="form-container shadow p-3 mb-5 bg-white rounded">
+              <h3 className="text-center">Log in</h3>
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  className="form-control w-100"
+                  placeholder="Enter email"
+                  onChange={(e) => setEmailLog(e.target.value)}
+                />
+              </div>
 
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Enter password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+              <div className="form-group">
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="form-control "
+                  placeholder="Enter password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
 
-            <button type="submit" className="btn btn-dark btn-lg btn-block">
-              Login
-            </button>
-            {flag && (
-              <Alert color="primary" variant="danger">
-                Your Email or Password is incorrect!
-              </Alert>
-            )}
+              <button type="submit" className="submit-btn">
+                Login
+              </button>
+              {flag && (
+                <Alert color="primary" variant="danger">
+                  Your Email or Password is incorrect!
+                </Alert>
+              )}
+            </div>
           </form>
         ) : (
           <Products />
