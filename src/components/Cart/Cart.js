@@ -1,4 +1,5 @@
 import React from "react";
+import useProducts from "../../hooks/useProducts";
 import "./Cart.css";
 
 const Cart = (props) => {
@@ -11,7 +12,7 @@ const Cart = (props) => {
   }
   return (
     <div>
-      <h1>This is Cart</h1>
+      <h1>Order Summary</h1>
 
       <h5>Item Order: {cart.length}</h5>
       <h6>Total: {total}</h6>

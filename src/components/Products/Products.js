@@ -16,6 +16,7 @@ const Products = () => {
         setFilterProduct(data.products);
       });
   }, []);
+
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
@@ -42,13 +43,15 @@ const Products = () => {
         </Form>
         <Row>
           <Col md={9}>
-            {filterProduct.map((product) => (
-              <Product
-                product={product}
-                key={product.id}
-                handleAddToCart={handleAddToCart}
-              ></Product>
-            ))}
+            <div className="product-container">
+              {filterProduct.map((product) => (
+                <Product
+                  product={product}
+                  key={product.id}
+                  handleAddToCart={handleAddToCart}
+                ></Product>
+              ))}
+            </div>
           </Col>
           <Col md={3}>
             <Cart cart={cart}></Cart>
